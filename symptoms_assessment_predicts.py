@@ -29,13 +29,14 @@ y = total_data['Infected with Covid19']
 def symptoms_check():
     curr = []
     print("Please give symptoms on a scale of 1-20")
+    print("0 for No symptom")
     print("1-5 : Low")
     print("6-12: Moderate")
     print("13-20: High")
 
     for feature in wanted_features:
         response = int(input("{} : ".format(feature)))
-        if 1 <= response <= 20:
+        if 0 <= response <= 20:
             curr.append(response)
         else:
             print("that is not a valid input.")
