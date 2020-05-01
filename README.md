@@ -8,12 +8,3 @@
   * Pandas
   * Numpy
   * Matplotlib
-
-To install the above packages through pip:
-'''python3
-pip install sklearn
-pip install pandas
-pip install numpy
-pip install matplotlib
-'''
-
