@@ -3,6 +3,7 @@
 # patient_df = patient_df[["sex", "birth_year", "country", "confirmed_date"]]
 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -47,12 +48,16 @@ def symptoms_check():
 
 # X_train, X_val, y_train, y_val = train_test_split(cleaned_data, y, random_state=0)
 
-model = RandomForestClassifier()
-model.fit(cleaned_data, y)
+rf_model = RandomForestClassifier()
+rf_model.fit(cleaned_data, y)
 
 asked_sym = symptoms_check()
 
-predictions = model.predict(asked_sym)
+predictions = rf_model.predict(asked_sym)
+
+dt_model = DecisionTreeClassifier()
+dt_model.fit(cleaned_data, y)
+print(dt_model.predict(asked_sym))
 
 if predictions == '0':
     print("\nThe model potentially predicts that you do not have COVID-19\n")
