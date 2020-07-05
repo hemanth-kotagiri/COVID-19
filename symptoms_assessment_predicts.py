@@ -7,6 +7,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
@@ -64,6 +65,9 @@ lr_model.fit(cleaned_data, y)
 print("Logistic Regression prediction: ", lr_model.predict(asked_sym))
 
 
+svc_model = SVC(max_iter=5000)
+svc_model.fit(cleaned_data, y)
+print("Logistic Regression prediction: ", svc_model.predict(asked_sym))
 
 # if predictions == '0':
 #     print("\nThe model potentially predicts that you do not have COVID-19\n")
